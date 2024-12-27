@@ -1,4 +1,4 @@
-1.find largest element in arr
+1.find largest in arr
 def getmax(arr):
     # Initialize minElement to a very large value
     maxElement = 0  
@@ -28,3 +28,198 @@ def getmin(arr):
 arr = [2,3,4,1,0]
 res = getmin(arr)
 print("Min Element ",res)
+3. FIND SECOND SMALLEST AND SECOND LARGEST
+    def getsecondlargest(arr):
+    largest,secondlargest = float('-inf'),float('-inf')
+    for num in arr:
+        if num > largest:
+            largest  = num
+        elif num > secondlargest and num < largest:
+            secondlargest = num
+    return secondlargest if secondlargest != float('-inf') else -1
+def getsecondsmallest(arr):
+    smallest,secondsmallest = float('inf'),float('inf')
+    for num in arr:
+        if num < smallest:
+            smallest = num
+        elif num < secondsmallest and num > smallest:
+            secondsmallest = num
+    return secondsmallest if secondsmallest != float('inf') else -1
+arr = [2,3,4,5,6,0]
+secondlargest = getsecondlargest(arr)
+secondsmallest = getsecondsmallest(arr)
+print("second largest: ", secondlargest, "\nsecond smallest:", secondsmallest)
+4. REVERSE ARRAY
+    def reversearr(arr):
+    n = len(arr)
+    start,end = 0,n-1
+    while start <= end:
+        arr[start],arr[end] = arr[end],arr[start]
+        start += 1
+        end -= 1
+    print(arr)
+   def input_array_format():
+    arr = list(map(int, input().strip("[]").split(',')))
+    return arr
+   n = int(input())
+    arr = input_array_format()
+   reversearr(arr)
+5. FREQUENCY OF ELEMENTS IN ARRAY
+    from collections import defaultdict
+def getfreq(arr):
+    store = defaultdict(int)
+    for num in arr:
+        store[num] += 1
+    print(dict(store))
+def input_array_format():
+    arr = list(map(int, input().strip("[]").split(',')))
+    return arr
+n = int(input())
+arr = input_array_format()
+getfreq(arr)
+INPUT : 5 
+        [2,3,4,5,6]
+OUTPUT: {2: 1, 3: 1, 4: 1, 5: 1, 6: 1}
+from collections import defaultdict
+def getfreq(arr):
+    store = defaultdict(int)
+    for num in arr:
+        store[num] += 1
+    for key,val in store.items():
+        print(key,val)
+def input_array_format():
+    arr = list(map(int, input().strip("[]").split(',')))
+    return arr
+n = int(input())
+arr = input_array_format()
+getfreq(arr)
+INPUT : 5 
+        [2,3,4,5,6]
+OUTPUT : 2 1
+3 1
+4 1
+5 1
+6 1
+6. REARRANGING ARRAY IN INCRE AND DEC 
+def rearrange_arr(arr):
+    increasing_order = sorted(arr)
+    decreasing_order = sorted(arr , reverse= True)
+    print(increasing_order)
+    print(decreasing_order)
+def input_array_format():
+    arr = list(map(int, input().strip("[]").split(',')))
+    return arr
+n = int(input())
+arr = input_array_format()
+rearrange_arr(arr)
+INPUT : 5
+[2,3,4,5,6]
+OUTPUT:
+[2, 3, 4, 5, 6]
+[6, 5, 4, 3, 2]
+7. SUM OF ELEMENTS IN ARRAY
+def sumofelements(arr):
+    n = len(arr)
+    total = 0
+    for i in range(n):
+        total += arr[i]
+    return total 
+    
+def input_array_format():
+    arr = list(map(int, input().strip("[]").split(',')))
+    return arr
+n = int(input())
+arr = input_array_format()
+result = sumofelements(arr)
+print(result)
+8.PRODUCT OF ELEMENTS
+        def proofelements(arr):
+    n = len(arr)
+    product = 1
+    for i in range(n):
+        product *= arr[i]
+    return product 
+    
+def input_array_format():
+    arr = list(map(int, input().strip("[]").split(',')))
+    return arr
+n = int(input())
+arr = input_array_format()
+result = proofelements(arr)
+print(result)
+9.ROTATE ELEMENTS BY K
+RIGHT TO LEFT
+def rotate_array(arr, k):
+    n = len(arr)
+    k = k % n  # Handle cases where k > n (rotate more than the array length)
+    
+    # Create a temporary array to store the rotated elements
+    temp = [0] * n
+    
+    # Place elements in their new positions in the temporary array
+    for i in range(n):
+        temp[(i - k + n) % n] = arr[i]
+    
+    # Copy the rotated elements back to the original array
+    for i in range(n):
+        arr[i] = temp[i]
+    
+    return arr
+def input_array_format():
+    arr = list(map(int, input().strip("[]").split(',')))
+    return arr
+
+# Input number of rotations (k)
+k = int(input())
+
+# Input the array (space-separated)
+arr = input_array_format()
+
+# Get rotated array and print it
+result = rotate_array(arr, k)
+print(result)
+INPUT : 3
+[1,2,3,4,5]
+OUTPUT:
+[4, 5, 1, 2, 3]
+10.ROTATE ELEMENTS BY K
+RIGHT TO LEFT
+def rotate_array(arr, k):
+    n = len(arr)
+    k = k % n  # Handle cases where k > n (rotate more than the array length)
+    
+    # Create a temporary array to store the rotated elements
+    temp = [0] * n
+    
+    # Place elements in their new positions in the temporary array
+    for i in range(n):
+        temp[(i - k + n) % n] = arr[i]
+    
+    # Copy the rotated elements back to the original array
+    for i in range(n):
+        arr[i] = temp[i]
+    
+    return arr
+def input_array_format():
+    arr = list(map(int, input().strip("[]").split(',')))
+    return arr
+
+# Input number of rotations (k)
+k = int(input())
+
+# Input the array (space-separated)
+arr = input_array_format()
+
+# Get rotated array and print it
+result = rotate_array(arr, k)
+print(result)
+INPUT : 3
+[1,2,3,4,5]
+OUTPUT :
+[4, 5, 1, 2, 3]
+
+
+
+
+
+
