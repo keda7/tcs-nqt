@@ -1,0 +1,95 @@
+1.AVG of given numbers 
+def getAvg(arr,N):
+    sumofArray = 0
+    for num in arr:
+        sumofArray += num
+    avg = sumofArray / N
+    print(avg)
+def input_array_format():
+    arr = list(map(int, input().strip("[]").split(',')))
+    return arr
+n = int(input())
+arr = input_array_format()
+getAvg(arr,n)
+      if // return mentioned in the question
+def getAvg(arr, N):
+    sumofArray = 0
+    for num in arr:
+        sumofArray += num
+    avg = sumofArray / N
+    return avg  # Return the result instead of printing
+
+def input_array_format():
+    arr = list(map(int, input().strip("[]").split(',')))  # Input the array
+    return arr
+
+# Main code
+n = int(input())  # Input size of array
+arr = input_array_format()  # Input the array elements
+result = getAvg(arr, n)  # Calculate average
+print(f"Average: {result:.2f}")  # Print the result formatted to 2 decimal places
+2.MEDIAN IN THE GIVEN ARRAY :
+  def getMedian(arr,N):
+    arr.sort()
+    if N % 2 == 0:
+        ind1 = (N // 2) - 1 // Index of first middle element
+        ind2 = (N // 2) // Index of second middle element
+        return (arr[ind1] + arr[ind2]) / 2.0
+    return arr[N // 2]
+def input_array_format():
+    arr = list(map(int, input().strip("[]").split(',')))
+    return arr
+n = int(input())
+arr = input_array_format()
+result = getMedian(arr,n)
+print(f"Median: {result}") 
+3.INSERTING ELEMENT IN AN ARRAY
+   def insertatbegining(value,arr,N):
+    nums = [0] * (N+1) 
+    for i in range(len(arr) - 1,-1,-1):
+        nums[i + 1] = arr[i]
+    nums[0] = value
+    print(*nums)
+arr = [1,3,5,7]
+insertatbegining(10,arr,len(arr))
+  // INSERTION AT ENDING
+  def insertatending(value,arr,N):
+    arr.append(value)
+    print(*arr)
+arr = [1,3,5,7]
+insertatending(10,arr,len(arr))
+// INSERTION AT MIDDLE
+def insertatmiddle(value,arr,N,location):
+    nums = [0] * (N+1)
+    for i in range(location):
+        nums[i] = arr[i]
+    for i in range(location,N):
+        nums[i+1] = arr[i]
+    nums[location] = value
+    print(*nums)
+arr = [1,3,5,7]
+insertatmiddle(10,arr,len(arr),3)
+4.REMOVE DUPLICATES
+def removeduplicate(arr,N):
+    unique = []
+    for i in range(N):
+        if arr[i] not in unique:
+            unique.append(arr[i])
+    print(unique)
+arr = [1,2,3,2,4,1,5]
+N = len(arr)
+removeduplicate(arr,N)
+input : arr = [1, 2, 3, 2, 4, 1, 5]
+output : [1, 2, 3, 4, 5]
+5.REMOVE DUPLICATES
+  from collections import Counter
+def get_unique_elements(arr):
+    freq = Counter(arr)
+    unique = [num for num in arr if freq[num] == 1]
+    return unique
+arr = [1, 2, 3, 2, 4, 1, 5]
+result = get_unique_elements(arr)
+print(result)
+input : arr = [1, 2, 3, 2, 4, 1, 5]
+output : [3,4,5]
+            
