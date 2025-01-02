@@ -1,0 +1,52 @@
+1.SORT ELEMENTS BY FREQUENCY
+  from collections import Counter
+def sortbyfreq(arr,N):
+    freq = Counter(arr)
+    sorted_arr = sorted(arr, key = lambda x: (-freq[x],x))
+    return sorted_arr
+def input_array_format():
+    arr = list(map(int, input().strip("[]").split(',')))
+    return arr
+N = int(input())
+arr = input_array_format()
+result = sortbyfreq(arr,N)
+print(result)
+INPUT : 5
+[1,2,3,2,2,3]
+  OUTPUT : [2,2,2,3,1]
+from collections import *
+def sortbyfreq(arr,N):
+    store = defaultdict(int)
+    for num in arr:
+        store[num] += 1
+    ans = sorted(store.items(), key = lambda item : item[1], reverse = True)
+   
+    
+    return ans
+def input_array_format():
+    arr = list(map(int, input().strip("[]").split(',')))
+    return arr
+N = int(input())
+arr = input_array_format()
+result = sortbyfreq(arr,N)
+print(result)
+INPUT :  5
+[1,2,3,2,2,3]
+OUTPUT: [(2, 3), (3, 2), (1, 1)]
+2. FIND EQUILIBRIUM POSI
+  def findequilibrium(arr,N):
+    total_sum = sum(arr)
+    left_sum = 0
+    for i in range(len(arr)):
+        right_sum = total_sum - left_sum - arr[i]
+        if left_sum == right_sum:
+            return i 
+        left_sum += arr[i]
+    return -1
+def input_array_format():
+    arr = list(map(int, input().strip("[]").split(',')))
+    return arr
+N = int(input())
+arr = input_array_format()
+result = findequilibrium(arr,N)
+print(result)
