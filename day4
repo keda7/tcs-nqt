@@ -1,0 +1,19 @@
+1.MOVE ZEROS TO END
+def movezero(N,arr):
+    non_zero_index =  0
+    for i in range(N):
+        if arr[i] != 0:
+            arr[non_zero_index] = arr[i]
+            non_zero_index += 1
+    for j in range(non_zero_index,N):
+        arr[i] = 0
+    return arr
+N = int(input())
+arr = list(map(int, input().split()))
+result = movezero(N, arr)
+print(*result)
+2.DECIMAL TO BINARY
+import math
+n = int(input())
+k = (1 << int(math.log2(n)) + 1) - 1 
+print(n^k)
