@@ -1,0 +1,53 @@
+recursive func on 2pown:
+def power_of_two(n):
+  if n == 1:
+    return 2
+  return 2 * pow_of_two(n-1)
+2.Sum of N numbers using Recursion:
+def sum_of_natural_numbers(n):
+   
+    if n == 0:
+        return 0
+    return n + sum_of_natural_numbers(n - 1)
+3.number of digits in a number using recursion
+def count_digits(n):
+    if n == 0:
+        return 0  # Base case: No digits left to count
+    return 1 + count_digits(n // 10)  # Remove the last digit and count the rest
+
+# Example usage:
+n = abs(int(input()))  # Take absolute value to handle negative numbers
+print(count_digits(n))
+4.Fibonacci Series using Recursion
+def fibonacci(n):
+    
+    """
+    # Your code here
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    return fibonacci(n - 1) + fibonacci(n - 2)
+WITHOUT RECURSION 
+def fibonacci_iterative(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+
+    a, b = 0, 1  # First two Fibonacci numbers
+    for _ in range(2, n + 1):
+        a, b = b, a + b  # Shift values forward
+    return b
+
+# Example usage:
+n = int(input("Enter n: "))
+print(f"Fibonacci({n}) = {fibonacci_iterative(n)}")
+5.Print 1 to N using Recursion
+def count_to_n(n):
+    if n == 1:
+        return [1]
+    return count_to_n(n - 1) + [n]
+
+    
+        
