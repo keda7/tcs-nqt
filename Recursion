@@ -44,10 +44,16 @@ def fibonacci_iterative(n):
 n = int(input("Enter n: "))
 print(f"Fibonacci({n}) = {fibonacci_iterative(n)}")
 5.Print 1 to N using Recursion
-def count_to_n(n):
+def count_to_n(n): # we perform recursion first and then we add n 
     if n == 1:
         return [1]
     return count_to_n(n - 1) + [n]
+6.print n to 1
+def count_down(n): #we add n before making recursive calls.
+    if n<=0:
+        return []
+    return [n] + count_down(n - 1)
+   
 
     
         
