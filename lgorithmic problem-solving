@@ -26,3 +26,21 @@ print(a-b)
     return count
 arr = [8,7,9,4,10]
 print(gretest_ele(arr))
+4.def max_num_guest(Entry, Exit):
+    max_guest = 0
+    prev_sum = 0  # Keeps track of the previous sum of guests
+
+    for i in range(len(Entry)):
+        current_guest = prev_sum + Entry[i] - Exit[i]  # Carry forward prev sum
+        max_guest = max(max_guest, current_guest)  # Update max guests
+        prev_sum = current_guest  # Update prev_sum for next iteration
+
+    return max_guest
+
+# Example usage:
+T = 5
+E = [7, 0, 5, 1, 3]  # Guests entering
+L = [1, 2, 1, 3, 4]  # Guests leaving
+
+print(max_num_guest(E, L))  # Output: 8
+
