@@ -18,3 +18,30 @@ def is_palindrome(s):
     if s[0] != s[-1]:
         return False
     return is_palindrome(s[1:-1])
+3.RETURN SUBSEQUENCE OF A STRING
+def return_subsequence(s1):
+    if (s1==''):
+        ans = ['']
+        return ans
+    remaining_subseq = return_subsequence(s1[1:])
+    first_char = s1[0]
+    ans = []
+    ans.extend(remaining_subseq)
+    for seq in remaining_subseq:
+        ans.appendef permutations(s):
+    return ans 
+4.PERMUTATIONS OF A STRING
+def permutations(s):
+    result = []
+    if (s==""):
+        return [""]
+    for i in range(len(s)):
+        first_char = s[i]  # Pick character at index i
+        remaining_string = s[:i] + s[i+1:]  # Remove character at index i
+        sub_permutations = permutations(remaining_string)  # Get permutations of remaining string
+        for prem in sub_permutations:  # Correctly indented inside the first loop
+            result.append(first_char + prem)  # Append new permutation
+    return result  # Return final list of permutations
+INPUT :  "abc" OUTPUT: ['abc', 'acb', 'bac', 'bca', 'cab', 'cba']
+
+   
