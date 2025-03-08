@@ -43,5 +43,25 @@ def permutations(s):
             result.append(first_char + prem)  # Append new permutation
     return result  # Return final list of permutations
 INPUT :  "abc" OUTPUT: ['abc', 'acb', 'bac', 'bca', 'cab', 'cba']
+5.GOOGLE KEYPAD INTERVIEW QUESTION
+def get_combinations(digits,mapping,index,current):
+    if index == len(digits): #if it reaches end 
+        return ["".join(current)] #join the letters ["A"],["D"] Then ["AD"] as list
+    letters = mapping[digits[index]]
+    result = []
+    for letter in letters:
+        result.extend(get_combinations(digits,mapping,index+1,current + [letter])) # index + 1 iterates both digits and current stored both letters
+    return result
+def keypad_words(digits): #do define the mapping
+    if not digits:
+        return []
+    mapping =  {
+        "2": "ABC", "3": "DEF", "4": "GHI", "5": "JKL",
+        "6": "MNO", "7": "PQRS", "8": "TUV", "9": "WXYZ"
+    }
+    return get_combinations(digits,mapping,0,[]) # an empty list to store the rescurson elements
+digits = "23"
+print(keypad_words(digits))
+OUTPUT : ['AD', 'AE', 'AF', 'BD', 'BE', 'BF', 'CD', 'CE', 'CF'] INPUT : 23
 
    
