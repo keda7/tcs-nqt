@@ -1,0 +1,42 @@
+1.Pirme numbers
+import math
+class Solution:
+    def check_prime(self, n):
+        if n < 2:
+            return False
+        if n == 2:
+            return True
+        if n % 2 == 0:
+            return False
+        for i in range(3, int(math.sqrt(n)) + 1, 2):  # Fixing brackets here too
+            if n % i == 0:
+                return False
+        return True
+
+# Create an instance of Solution class
+sol = Solution()
+n = int(input("Enter your number: "))  # Fixed typo in input prompt
+res = sol.check_prime(n)  # Correct method call
+print(n, "is prime:", res)  # Fix output formatting
+2.Sum of arthemetic series 
+class Solution:
+    def ar_series(self, arr):  # Added 'self'
+        sum = 0
+        for num in arr:
+            sum += num  # Fixed 'n' -> 'num'
+        return sum
+sol = Solution()  # Create an instance of Solution
+arr = [2, 3, 4, 5, 6]
+res = sol.ar_series(arr)  # Correct method call
+print(res)  # Output: 20
+3.sum of Geometric series 
+class Solution:
+    def geometric_series(self, a, r, n):
+        if r == 1:
+            return a * n  # If ratio is 1, sum = a * n (simple multiplication)
+        return a * (1 - r**n) // (1 - r)  # Applying the formula
+sol = Solution()
+a, r, n = 2, 3, 4
+res = sol.geometric_series(a, r, n)
+print("Sum of Geometric Series:", res)
+
