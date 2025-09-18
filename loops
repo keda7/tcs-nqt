@@ -1,0 +1,78 @@
+1.REVERSE OF A NUMBER
+n = 4562
+rev = 0
+
+while(n > 0):
+    a = n % 10 1.FIND LAST DIGIT
+    rev = rev * 10 + a 2. REVERSE 
+    n = n // 10 3.FIND NEW VALUE
+
+print(rev)
+
+2.PALINDROME 
+def palindrome(s):
+    left , right = 0, len(s) - 1
+    while left < right:
+        if s[left] != s[right]:
+            return False
+        left += 1
+        right -= 1
+    return True
+s = input("enter text")
+print(palindrome(s))
+
+3.AMSTRONG
+def is_armstrong(num):
+    temp = num
+    order = len(str(num))          # number of digits
+    total = 0
+    
+    while num > 0:
+        ld = num % 10
+        total += ld ** order       # digit^order
+        num //= 10
+    
+    if total == temp:
+        print("Armstrong")
+    else:
+        print("Not Armstrong")
+
+# Examples
+is_armstrong(153)   # ✅ Armstrong
+is_armstrong(9474)  # ✅ Armstrong
+is_armstrong(123)   # ❌ Not Armstrong
+
+4.SUM OF N NATURAL NUMBERS 
+def sum(n):
+   total = 0
+   i = 1
+   while i <= n:
+       total += i
+       i += 1
+   return total
+n = int(input("Enter num"))
+print(sum(n))
+
+5.Factorial of a number
+def sum(n):
+   total = 1
+   i = 1
+   while i <= n:
+       total *= i
+       i += 1
+   return total
+n = int(input("Enter num"))
+print(sum(n))
+
+6.FIBONACCI
+class Solution:
+    def fib (self,N):
+        if N == 0:
+            return 0
+        if N == 1:
+            return 1
+        a,b = 0,1
+        for _ in range(2, N + 1):
+            a,b = b,(a+b) % 10
+        return b
+7.
